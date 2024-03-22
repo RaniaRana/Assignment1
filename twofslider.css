@@ -1,0 +1,110 @@
+#twofslider {
+    margin: 0 auto;
+    width: 1200px;
+    max-width: 100%;
+    text-align: center;
+ }
+ #twofslider input[type=radio] {
+    display: none;
+ }
+ #twofslider label {
+    cursor: pointer;
+    text-decoration: none;
+ }
+ #twofslides {
+    /*padding: 10px;
+    border: 3px solid #ccc;*/
+    background: #fff;
+    position: relative;
+    z-index: 1;
+ }
+ #twofoverflow {
+    width: 100%;
+    overflow: hidden;
+ }
+ #twofslide1:checked ~ #twofslides .inner {
+    margin-left: 0;
+ }
+ #twofslide2:checked ~ #twofslides .inner {
+    margin-left: -100%;
+ }
+ #twofslides .inner {
+    transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+    width: 200%; /* Adjusted for 2 slides */
+    line-height: 0;
+    height: 450px;
+ }
+ #twofslides .slide {
+    width: 50%; /* Adjusted for 2 slides */
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #fff;
+ }
+ #twofslides .slide_1 {
+    background: #fff;
+ }
+ #twofslides .slide_2 {
+    background: #fff;
+ }
+ #twofcontrols {
+    margin: -180px 0 0 0;
+    width: 100%;
+    height: 50px;
+    z-index: 3;
+    position: relative;
+ }
+ #twofcontrols label {
+    transition: opacity 0.2s ease-out;
+    display: none;
+    width: 50px;
+    height: 50px;
+    opacity: .4;
+ }
+ #twofcontrols label:hover {
+    opacity: 1;
+ }
+ #twofslide1:checked ~ #twofcontrols label:nth-child(2),
+ #twofslide2:checked ~ #twofcontrols label:nth-child(1) {
+    background: url(https://image.flaticon.com/icons/svg/130/130884.svg) no-repeat;
+    float: right;
+    margin: 0 -50px 0 0;
+    display: block;
+ }
+ #twofslide1:checked ~ #twofcontrols label:nth-last-child(2),
+ #twofslide2:checked ~ #twofcontrols label:nth-last-child(1) {
+    background: url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
+    float: left;
+    margin: 0 0 0 -50px;
+    display: block;
+ }
+ #twofbullets {
+    margin: 150px 0 0;
+    text-align: center;
+ }
+ #twofbullets label {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #ccc;
+    margin: 0 10px;
+ }
+ #twofslide1:checked ~ #twofbullets label:nth-child(1),
+ #twofslide2:checked ~ #twofbullets label:nth-child(2) {
+    background: #444;
+ }
+ @media screen and (max-width: 900px) {
+    #twofslide1:checked ~ #twofcontrols label:nth-child(2),
+    #twofslide2:checked ~ #twofcontrols label:nth-child(1),
+    #twofslide1:checked ~ #twofcontrols label:nth-last-child(2),
+    #twofslide2:checked ~ #twofcontrols label:nth-last-child(1) {
+       margin: 0;
+    }
+    #twofslides {
+       max-width: calc(100% - 140px);
+       margin: 0 auto;
+    }
+ }
